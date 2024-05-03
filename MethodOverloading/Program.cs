@@ -21,11 +21,17 @@
 
         public static string Add(int num1, int num2, bool isUSD)
         {
-            if (isUSD)
+
+            int total = num1 + num2;
+                if (isUSD && total > 1)
             {
-                string total = (num1 + num2).ToString();
-                return total;
-            }
+                total.ToString();
+                return $"{total} Dollars");
+            } else if (isUSD && total == 1)
+            {
+                total.ToString();
+                return $"{total} Dollar"
+;            }
             else { return "no funny money"; }
         }
     }
